@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 150 10% 8%;
+    --foreground: 120 5% 90%;
+
+    --card: 150 10% 12%;
+    --card-foreground: 120 5% 90%;
+
+    --popover: 150 10% 12%;
+    --popover-foreground: 120 5% 90%;
+
+    --primary: 143 30% 45%;
+    --primary-foreground: 150 10% 8%;
+
+    --secondary: 150 8% 18%;
+    --secondary-foreground: 120 5% 85%;
+
+    --muted: 150 8% 16%;
+    --muted-foreground: 120 5% 55%;
+
+    --accent: 143 25% 35%;
+    --accent-foreground: 120 5% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 150 8% 20%;
+    --input: 150 8% 20%;
+    --ring: 143 30% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 150 10% 10%;
+    --sidebar-foreground: 120 5% 90%;
+    --sidebar-primary: 143 30% 45%;
+    --sidebar-primary-foreground: 150 10% 8%;
+    --sidebar-accent: 150 8% 18%;
+    --sidebar-accent-foreground: 120 5% 90%;
+    --sidebar-border: 150 8% 20%;
+    --sidebar-ring: 143 30% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .story-link * {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
