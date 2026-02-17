@@ -4,107 +4,149 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform with payment integration, inventory management, and real-time order tracking.",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    code: "#",
+    title: "Analyser-GPT: Digital Data Analyst",
+    description:
+      "Imagine needing quick, reliable insights from your data without writing code or worrying about errors. This project solves that problem by letting you upload a CSV file and instantly get clear analysis, visualizations, and answers to your questions. An intelligent digital analyst automates the entire workflow, so you can focus on decisions, not technical details",
+    tech: ["Microsoft Autogen", "Multi-Agent Orchestration", "Agentic AI", "Streamlit","Docker","Secure Code Execution"],
+    code: "https://github.com/namitjain123/Analyser-GPT",
     demo: "#",
+    image: "/projects/ecommerce.jpg",
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management tool with real-time updates, drag-and-drop boards, and team analytics.",
-    tech: ["Next.js", "TypeScript", "Prisma", "WebSocket"],
-    code: "#",
+    title: "AI Blog Generation Platform with LangGraph and FastAPI",
+    description:
+      "Developed a production-ready AI blog generation system leveraging LangGraph-based state orchestration within a FastAPI backend. Engineered structured, multi-step AI pipelines for title generation, content drafting, and multilingual transformation with controlled execution logic. Built persistent storage using SQLite with full RESTful CRUD support and integrated a responsive React frontend for real-time content rendering and seamless user interaction.",
+    tech: ["LangGraph", "FastAPI", "React", "Python", "SQLite", "Docker","Rag"],
+    code: "https://github.com/namitjain123/blog-generator-using-langgraph",
     demo: "#",
+    image: "/projects/task.jpg",
   },
   {
-    title: "AI Chat Assistant",
-    description: "An intelligent chatbot powered by GPT with context awareness and multi-language support.",
-    tech: ["Python", "FastAPI", "OpenAI", "Redis"],
-    code: "#",
+    title: "Adaptive RAG System with Self-Correcting Agent",
+    description:
+      "Built an AI-powered application where an agent dynamically routes queries between vector search and live web search before generating responses. Designed a stateful LangGraph workflow implementing self-correcting retrieval, retry logic, and validation instead of a single-pass LLM call. Implemented grounded response verification and transparent source logging to reduce hallucinations, improve reliability, and make the system debuggable and production-ready. Deployed the interactive interface using Streamlit for real-time query handling and response visualization.",
+    tech: ["Python", "FastAPI", "LangGraph", "Streamlit","ChromaDB","Docker","Azure"],
+    code: "https://github.com/namitjain123/Adaptive-Rag",
     demo: "#",
+    image: "/projects/ai-chat.jpg",
   },
   {
-    title: "Social Media Dashboard",
-    description: "Analytics dashboard aggregating data from multiple social platforms with interactive charts.",
-    tech: ["Vue.js", "D3.js", "Express", "MongoDB"],
-    code: "#",
+    title: "Full-Stack Todo Management System",
+    description:
+      "Built a full-stack Todo Management system using FastAPI and SQLAlchemy with PostgreSQL (Supabase) as the database backend. Implemented secure JWT-based authentication along with Role-Based Access Control (RBAC), enabling protected routes and admin-only operations. Containerized the application using Docker and deployed it to Azure Container Apps, integrating Azure Container Registry (ACR) for scalable, cloud-ready infrastructure.",
+    tech: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL (Supabase)","JWT Authentication","Docker","Azure"],
+    code: "https://github.com/namitjain123/fast-api-scratch",
     demo: "#",
+    image: "/projects/dashboard.jpg",
   },
   {
-    title: "Weather Forecast App",
-    description: "A beautiful weather application with 7-day forecasts, radar maps, and severe weather alerts.",
-    tech: ["React Native", "TypeScript", "OpenWeather API"],
-    code: "#",
+    title: "Customer Churn Analytics & Risk Prioritisation Dashboard",
+    description:
+      "Built a business-focused churn analytics system translating raw customer data into executive-ready KPIs and prioritised risk insights. Engineered an interpretable logistic regression model to classify churn probability while maintaining transparency for stakeholder decision-making. Delivered data-backed retention strategies focused on impact, feasibility, and measurable revenue protection.",
+    tech: ["Python", "Machine Learning", "Logistic Regression","Customer Analytic","Data Visualisation"],
+    code: "https://github.com/namitjain123/Customer-churn-data-analysis",
     demo: "#",
+    image: "/projects/weather.jpg",
   },
-  {
-    title: "Portfolio Generator",
-    description: "A tool that generates customizable portfolio websites from a simple JSON configuration.",
-    tech: ["Svelte", "Tailwind", "Vercel", "MDX"],
-    code: "#",
-    demo: "#",
-  },
+  
 ];
 
-const INITIAL_SHOW = 3;
+const INITIAL_SHOW = 4;
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? projects : projects.slice(0, INITIAL_SHOW);
 
   return (
-    <section id="projects" className="py-24 px-4">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="font-display text-4xl font-bold text-foreground mb-12 text-center">
+    <section id="projects" className="py-28 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-14 text-center">
           My <span className="text-primary">Projects</span>
         </h2>
 
-        <div className="space-y-8">
+        {/* ✅ Grid like Eby */}
+        <div className="grid gap-10 md:grid-cols-2">
           {visible.map((project, i) => (
-            <div
-              key={i}
-              className="group relative bg-card border border-border rounded-lg p-6 md:p-8 hover:border-primary/50 transition-colors"
+            <article
+              key={project.title}
+              className="relative rounded-3xl overflow-hidden border border-white/10 bg-card shadow-xl hover:shadow-2xl transition-shadow"
             >
-              <div className="flex flex-col md:flex-row md:items-start gap-4">
-                <span className="font-display text-5xl font-bold text-primary/20 leading-none">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((t) => (
-                      <Badge key={t} variant="secondary" className="text-xs">
-                        {t}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.code}
-                      className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+              {/* Image */}
+              <div className="relative h-[240px] md:h-[260px] bg-secondary">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+              </div>
+
+              {/* Light content area like Eby */}
+              <div className="bg-[#f5f7f6] text-[#071f1a] p-7 md:p-8">
+                {/* Number + divider */}
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold tracking-widest text-[#071f1a]/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="my-4 h-px w-full bg-[#071f1a]/15" />
+
+                {/* Title */}
+                <h3 className="text-3xl md:text-4xl font-extrabold leading-tight">
+                  {project.title}
+                </h3>
+
+                {/* Desc */}
+                <p className="mt-4 text-base md:text-lg leading-relaxed text-[#071f1a]/75">
+                  {project.description}
+                </p>
+
+                {/* Tech badges */}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <Badge
+                      key={t}
+                      variant="secondary"
+                      className="text-xs md:text-sm px-3 py-1 rounded-full"
                     >
-                      <Github size={16} /> Code
-                    </a>
-                    <a
-                      href={project.demo}
-                      className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                    >
-                      <ExternalLink size={16} /> Demo
-                    </a>
-                  </div>
+                      {t}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Buttons (Eby style) */}
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#071f1a] text-white px-7 py-3 text-base font-semibold hover:opacity-90 transition"
+                  >
+                    <Github size={18} />
+                    Code <ExternalLink size={16} />
+                  </a>
+
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#b9d4c7] text-[#071f1a] px-7 py-3 text-base font-semibold hover:opacity-90 transition"
+                  >
+                    Demo <ExternalLink size={16} />
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
+        {/* Show more / less */}
         {projects.length > INITIAL_SHOW && (
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="border border-primary text-primary px-8 py-3 rounded-md font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="rounded-full border border-primary text-primary px-10 py-4 text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               {showAll ? "Show Less" : "Show More"}
             </button>

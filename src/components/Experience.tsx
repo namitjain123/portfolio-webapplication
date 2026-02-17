@@ -1,79 +1,167 @@
+import { useEffect, useMemo, useRef, useState } from "react";
+
 const experiences = [
   {
-    role: "Senior Software Engineer",
-    company: "Company A",
-    period: "Jan 2023 – Present",
+    role: "Research Software Engineer Intern (Data)",
+    company: "DBST Solutions",
+    period: "Mar 2025 – Feb. 2026",
     points: [
-      "Led development of microservices architecture serving 1M+ users",
-      "Mentored a team of 5 junior developers",
-      "Reduced deployment time by 40% through CI/CD improvements",
+      "Implemented scalable demo environment for research data management in a 4-member team",
+      "Generated synthetic whole-genome sequencing datasets and built ingestion pipelines",
+      "Accelerated dependent data processing by ~20% through optimized pipelines",
+      "Launched data portals on non-expiring VMs ensuring 24/7 researcher accessibility",
+      "Reduced cross-project miscommunication by 30% through weekly alignment meetings",
     ],
   },
   {
-    role: "Software Engineer",
-    company: "Company B",
-    period: "Jun 2020 – Dec 2022",
+    role: "Associate Software Engineer",
+    company: "HabileLabs Pvt. Ltd",
+    period: "Aug 2023 – Nov 2024",
     points: [
-      "Built and maintained RESTful APIs using Node.js and Express",
-      "Implemented real-time features with WebSockets",
-      "Improved test coverage from 45% to 90%",
+      "Built and maintained a production Flutter app used by thousands, shipping features and supporting stable app-store releases.",
+      "Resolved production incidents, improved stability, and supported deployments for a financial home-loan platform.",
+      "Optimized SQL databases (5,000+ records) and improved query performance and reliability.",
+      "Managed Nginx and optimized PHP cron jobs, improving uptime and automation workflows for the internal portal.",
     ],
   },
   {
-    role: "Junior Developer",
-    company: "Company C",
-    period: "Jan 2019 – May 2020",
+    role: "Technology Intern",
+    company: "Mercer Mettl",
+    period: "Jan 2023 – July 2023",
     points: [
-      "Developed responsive front-end interfaces with React",
-      "Collaborated with design team on UI/UX improvements",
-      "Participated in agile ceremonies and code reviews",
+      "Developed automated assessment and scoring systems using NLP techniques for enterprise evaluation workflows.",
+      "Implemented structured scoring logic assessing correctness, relevance, and completeness.",
+      "Reduced manual evaluation effort by supporting scalable, AI-enabled assessment pipelines",
     ],
   },
 ];
 
 const Experience = () => {
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  // build ids so observer can track
+  const ids = useMemo(() => experiences.map((_, i) => `exp-${i}`), []);
+
+  useEffect(() => {
+    const els = itemsRef.current.filter(Boolean) as HTMLDivElement[];
+    if (!els.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        // pick the entry most visible
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
+
+        if (visible) {
+          const idx = Number((visible.target as HTMLElement).dataset.index);
+          if (!Number.isNaN(idx)) setActive(idx);
+        }
+      },
+      {
+        root: null,
+        // this makes it switch when the left title hits mid-screen
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: [0.15, 0.35, 0.55, 0.75],
+      }
+    );
+
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section id="experience" className="py-24 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="font-display text-4xl font-bold text-foreground mb-12 text-center">
+    <section id="experience" className="py-28 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-16 text-center">
           My <span className="text-primary">Experience</span>
         </h2>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border" />
-
-          {experiences.map((exp, i) => (
-            <div
-              key={i}
-              className={`relative mb-12 md:w-1/2 ${
-                i % 2 === 0 ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"
-              } pl-12 md:pl-0`}
-            >
-              {/* Dot */}
+        <div
+          ref={containerRef}
+          className="grid md:grid-cols-[1.2fr_80px_1fr] gap-10 md:gap-6 items-start"
+        >
+          {/* LEFT: Big titles (scroll anchors) */}
+          <div className="space-y-20 md:space-y-28">
+            {experiences.map((exp, i) => (
               <div
-                className={`absolute top-2 w-3 h-3 rounded-full bg-primary left-[10px] md:left-auto ${
-                  i % 2 === 0 ? "md:right-[-6px]" : "md:left-[-6px]"
-                }`}
-              />
+                key={ids[i]}
+                id={ids[i]}
+                data-index={i}
+                ref={(el) => {
+                  itemsRef.current[i] = el;
+                }}
+                className="scroll-mt-28"
+              >
+                <h3
+                  className={`font-display font-extrabold leading-tight tracking-tight
+                  text-4xl md:text-5xl lg:text-6xl
+                  ${active === i ? "text-foreground" : "text-foreground/65"}`}
+                >
+                  {exp.role}
+                </h3>
 
-              <div className="bg-card border border-border rounded-lg p-6">
-                <span className="text-xs text-primary font-medium uppercase tracking-wider">
-                  {exp.period}
-                </span>
-                <h3 className="text-lg font-semibold text-foreground mt-1">{exp.role}</h3>
-                <p className="text-muted-foreground text-sm mb-3">{exp.company}</p>
-                <ul className="space-y-1">
-                  {exp.points.map((point, j) => (
-                    <li key={j} className="text-muted-foreground text-sm flex gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-2">
+                  <p className="text-primary/80 font-semibold">{exp.company}</p>
+                  <p className="text-muted-foreground font-semibold">{exp.period}</p>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* MIDDLE: line + moving dot */}
+          <div className="relative hidden md:flex justify-center">
+            <div className="absolute top-0 bottom-0 w-px bg-border" />
+
+            {/* moving dot */}
+            <div
+              className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary"
+              style={{
+                top: `${active * 220}px`, // spacing; tweak if your gaps differ
+                transition: "top 350ms ease",
+              }}
+            />
+
+            {/* bottom knob */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-primary/25 border border-primary/40" />
+          </div>
+
+          {/* RIGHT: bullets for active experience */}
+          <div className="md:sticky md:top-28">
+            <ul className="space-y-4 text-lg leading-relaxed text-foreground/85">
+              {experiences[active].points.map((p, j) => (
+                <li key={j} className="flex gap-4">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" />
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* optional quick nav */}
+            <div className="mt-10 flex flex-wrap gap-3">
+              {experiences.map((_, i) => (
+                <a
+                  key={i}
+                  href={`#${ids[i]}`}
+                  className={`px-4 py-2 rounded-full border text-sm font-semibold transition
+                    ${
+                      active === i
+                        ? "border-primary text-primary"
+                        : "border-border text-muted-foreground hover:text-primary hover:border-primary/60"
+                    }`}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </a>
+              ))}
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Mobile fallback line (optional) */}
+        <div className="md:hidden mt-12 text-center text-muted-foreground">
+          Tip: Scroll — bullets update automatically.
         </div>
       </div>
     </section>

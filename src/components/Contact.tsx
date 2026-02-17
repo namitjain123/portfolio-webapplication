@@ -2,38 +2,88 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-4 bg-secondary/30">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="font-display text-4xl font-bold text-foreground mb-12 text-center">
-          Get In <span className="text-primary">Touch</span>
+    <section id="contact" className="py-32 px-4">
+      <div className="container mx-auto max-w-6xl text-center">
+        {/* Big Title */}
+        <h2 className="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold text-foreground tracking-tight">
+          Contact
         </h2>
 
-        <div className="grid sm:grid-cols-3 gap-8 mb-12">
-          {[
-            { icon: Phone, label: "+1 (555) 000-0000" },
-            { icon: Mail, label: "hello@example.com" },
-            { icon: MapPin, label: "City, Country" },
-          ].map(({ icon: Icon, label }, i) => (
-            <div key={i} className="flex flex-col items-center gap-3 text-center">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                <Icon className="text-primary" size={24} />
-              </div>
-              <span className="text-muted-foreground text-sm">{label}</span>
-            </div>
-          ))}
+        {/* Get In Touch with lines */}
+        <div className="mt-6 flex items-center justify-center gap-6">
+          <div className="h-px w-20 md:w-28 bg-border" />
+          <p className="font-display italic text-xl md:text-2xl text-muted-foreground">
+            Get In Touch
+          </p>
+          <div className="h-px w-20 md:w-28 bg-border" />
         </div>
 
-        <div className="flex justify-center gap-6">
-          {["LinkedIn", "GitHub", "Medium"].map((platform) => (
+        {/* Big statement */}
+        <p className="mt-14 text-3xl md:text-5xl font-semibold leading-tight text-foreground/90">
+          Open to new opportunities, interesting projects, or a{" "}
+          <span className="text-primary">chat about AI and tech.</span>
+        </p>
+
+        {/* Contact details */}
+        <div className="mt-14 grid gap-10 sm:grid-cols-3">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Phone className="text-primary" size={24} />
+            </div>
+            <p className="text-sm uppercase tracking-widest text-muted-foreground">
+              Phone
+            </p>
+            <p className="text-base md:text-lg text-foreground/80">
+              +61 473130920
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Mail className="text-primary" size={24} />
+            </div>
+            <p className="text-sm uppercase tracking-widest text-muted-foreground">
+              Email
+            </p>
+            <p className="text-base md:text-lg text-foreground/80">
+              namitjain0620@gmail.com
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <MapPin className="text-primary" size={24} />
+            </div>
+            <p className="text-sm uppercase tracking-widest text-muted-foreground">
+              Location
+            </p>
+            <p className="text-base md:text-lg text-foreground/80">
+               Australia
+            </p>
+          </div>
+        </div>
+
+        {/* Social links */}
+        <div className="mt-14 flex flex-wrap justify-center gap-8">
+          {[
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/namit-jain123/" },
+            { label: "GitHub", href: "https://github.com/namitjain123" },
+            { label: "Medium", href: "https://medium.com/@namitjain0620" },
+          ].map((item) => (
             <a
-              key={platform}
-              href="#"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+              key={item.label}
+              href={item.href}
+              className="text-muted-foreground hover:text-primary transition-colors text-base font-semibold"
             >
-              {platform}
+              {item.label}
             </a>
           ))}
         </div>
+
+        {/* Optional footer line */}
+        <p className="mt-20 text-sm text-muted-foreground">
+          Designed and Developed by <span className="text-primary">[Namit Jain]</span>
+        </p>
       </div>
     </section>
   );
