@@ -2,15 +2,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 const experiences = [
   {
-    role: "Research Software Engineer Intern (Data)",
+    role: "AI Engineering Internship",
     company: "DBST Solutions",
-    period: "Mar 2025 – Feb. 2026",
+    period: "Aug. 2025 – Feb. 2026",
     points: [
-      "Implemented scalable demo environment for research data management in a 4-member team",
-      "Generated synthetic whole-genome sequencing datasets and built ingestion pipelines",
-      "Accelerated dependent data processing by ~20% through optimized pipelines",
-      "Launched data portals on non-expiring VMs ensuring 24/7 researcher accessibility",
-      "Reduced cross-project miscommunication by 30% through weekly alignment meetings",
+      "Developed a proof-of-concept LLM-based internal knowledge assistant using LangChain and vector search for document retrieval.",
+      "Implemented a Retrieval-Augmented Generation (RAG) pipeline to enable context-aware question answering from internal documents.",
+      "Built REST APIs using FastAPI to expose the AI assistant as a service.",
+      "Containerized the application using Docker to simulate deployment-ready environments.",
+      "Conducted prompt engineering experiments to improve response accuracy and reduce hallucinations."
     ],
   },
   {
