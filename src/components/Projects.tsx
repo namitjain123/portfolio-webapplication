@@ -19,7 +19,7 @@ const projects = [
     tech: ["LangGraph", "FastAPI", "React", "Python", "SQLite", "Docker","Rag"],
     code: "https://github.com/namitjain123/blog-generator-using-langgraph",
     demo: "https://youtu.be/9KoACMW-f30",
-    image: "/projects/ai-blog-langgraph.png",
+    image: "/projects/ai-blog-langraph.png",
   },
   {
     title: "Adaptive RAG System with Self-Correcting Agent",
@@ -28,7 +28,7 @@ const projects = [
     tech: ["Python", "FastAPI", "LangGraph", "Streamlit","ChromaDB","Docker","Azure"],
     code: "https://github.com/namitjain123/Adaptive-Rag",
     demo: "https://youtu.be/9KoACMW-f30",
-    image: "/projects/adaptive-rag.png",
+    image: "/projects/adaptive-rag.jpg",
   },
   {
     title: "Full-Stack Todo Management System",
@@ -64,7 +64,7 @@ const projects = [
 ],
     code: "https://github.com/namitjain123/mlprojects.git",
     demo: "https://youtu.be/qfW1xQLHeDA",
-    image: "/projects/churn-dashboard.png",
+    image: "/projects/ml-prediction.png",
   },
   {
     title: "Chest Disease Prediction using Transfer Learning & MLOps",
@@ -85,7 +85,7 @@ const projects = [
 ],
     code: "https://github.com/namitjain123/deep-learning-chest-disease",
     demo: "https://youtu.be/9KoACMW-f30",
-    image: "/projects/churn-dashboard.png",
+    image: "/projects/lung-disease.png",
   },
   
 ];

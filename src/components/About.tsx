@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Download, ChevronLeft, ChevronRight, Linkedin, Mail } from "lucide-react";
 
-const images = ["/about/1.jpg", "/about/2.jpg", "/about/3.jpg", "/about/4.jpg"];
+const images = ["/about/image1.jpg", "/about/image2.jpg", "/about/image3.jpg"];
 
 const stack = [
   "Python",
@@ -16,7 +16,7 @@ const stack = [
 ];
 
 const stats = [
-  { label: "Projects Built", value: "10+" },
+  { label: "Projects Built", value: "7+" },
   { label: "Focus", value: "RAG + Agents" },
   { label: "Deployment", value: "Docker + Azure" },
 ];
@@ -119,24 +119,25 @@ const About = () => {
 
         {/* Centered Text */}
         <div className="mx-auto max-w-3xl space-y-6 text-white/80 leading-relaxed text-lg">
-          <p>
-            I’m a Master of Data Science student in Melbourne with a deep interest in AI systems, full-stack engineering, and building things that actually work in the real world.
-          </p>
+              <p>
+                I’m a Master of Data Science student in Melbourne with a strong interest in AI systems, full-stack engineering, and building real-world solutions.
+              </p>
 
-          <p>
-            Most of my time is split between experimenting with RAG pipelines and agentic workflows, and solving programming problems on platforms like LeetCode and GeeksforGeeks. I genuinely enjoy breaking down complex problems and refining solutions — it sharpens both my coding and my thinking ability. For me, competitive programming isn’t just practice, it’s mental training.
-          </p>
-          <p>
-            Outside of tech, I’m extremely sports-driven. If there’s a game, I’ll probably play it — badminton, cricket, basketball, swimming — I’m in. The gym is my reset button, discipline builder, and consistency coach. I believe the mindset you build in sports carries directly into engineering: patience, resilience, and showing up every single day.
-          </p>
-          
-            I’m also a coffee person,not just drinking it, but exploring it. Café hopping around Melbourne, tasting different brews, noticing small details,it’s my way of slowing down in a fast-moving world.
-          <p>
-            I keep my learning experiments and materials open on GitHub so others can build on them, and I write the occasional blog on Medium when something deserves a longer story. It’s my way of giving back to the same community that helped me learn in the first place.
-          </p>
-          <p>
-            Whether I’m optimizing a pipeline, debugging at 2am, playing a weekend match, or discovering a new café, I try to approach everything with curiosity and consistency. I don’t just like building software — I like building systems, habits, and momentum.
-          </p>
+              <p>
+                I spend most of my time working on RAG pipelines, agent-based systems, and sharpening my problem-solving through platforms like LeetCode. I enjoy breaking down complex problems and turning them into efficient, scalable solutions.
+              </p>
+
+              <p>
+                Outside tech, I’m very active in sports and fitness — the discipline and consistency from training directly shape how I approach engineering and learning.
+              </p>
+
+              <p>
+                I also enjoy exploring Melbourne’s café culture and sharing my work through GitHub and occasional blogs, contributing back to the community.
+              </p>
+
+              <p>
+                I focus on building not just software, but systems, habits, and long-term growth.
+              </p>
         </div>
 
         {/* stack chips */}

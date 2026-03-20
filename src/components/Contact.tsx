@@ -80,10 +80,7 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Optional footer line */}
-        <p className="mt-20 text-sm text-muted-foreground">
-          Designed and Developed by <span className="text-primary">[Namit Jain]</span>
-        </p>
+       
       </div>
     </section>
   );

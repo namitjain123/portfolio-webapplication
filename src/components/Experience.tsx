@@ -1,16 +1,32 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 const experiences = [
+   {
+    role: "Software Developer Intern",
+    company: "Deakin University & Australian Catholic University",
+    period: "March 2026 - present",
+    points: [
+      "Developing a secure web-based intervention platform to support a university-led randomized controlled trial (RCT)\
+focused on improving parents’ awareness of adolescents’ online security and privacy",
+      "Implementing authentication and identity management using Microsoft Azure Entra External ID integrated with\
+a React-based single-page application.",
+      "Designing structured learning workflows including mandatory pre-intervention questionnaires, sequential episode\
+unlocking, and interactive assessments to guide participant progression",
+      "Building client-side data management and progress tracking mechanisms to capture participant engagement, questionnaire responses, and activity completion for research analysis",
+    ],
+  },
   {
     role: "AI Engineering Internship",
     company: "DBST Solutions",
     period: "Aug. 2025 – Feb. 2026",
     points: [
-      "Developed a proof-of-concept LLM-based internal knowledge assistant using LangChain and vector search for document retrieval.",
+      "Developed an enterprise Retrieval-Augmented Generation (RAG) system enabling natural language question answering over internal PDF documents.",
       "Implemented a Retrieval-Augmented Generation (RAG) pipeline to enable context-aware question answering from internal documents.",
-      "Built REST APIs using FastAPI to expose the AI assistant as a service.",
-      "Containerized the application using Docker to simulate deployment-ready environments.",
-      "Conducted prompt engineering experiments to improve response accuracy and reduce hallucinations."
+      "Implemented hybrid retrieval (vector search + BM25 keyword search) with cross-encoder reranking to improve\
+document retrieval accuracy..",
+      "Built scalable FastAPI APIs and a Gradio chatbot interface for document ingestion and interactive querying",
+      "Integrated ChromaDB vector database and Groq LLM to generate grounded responses from retrieved document\
+context."
     ],
   },
   {
