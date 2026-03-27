@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const experiences = [
    {
     role: "Software Developer Intern",
-    company: "Deakin University & Australian Catholic University",
+    company: "Australian Catholic University",
     period: "March 2026 - present",
     points: [
       "Developing a secure web-based intervention platform to support a university-led randomized controlled trial (RCT)\
