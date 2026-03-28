@@ -2,13 +2,6 @@ import { ExternalLink } from "lucide-react";
 
 const certs = [
   {
-    title: "Azure az-900: Microsoft Azure Fundamentals",
-    issuer: "Azure",
-    year: "2026",
-    link: "#",
-    image: "/certs/aws.png",
-  },
-  {
     title: "Complete Agentic AI Bootcamp With LangGraph and Langchain",
     issuer: "Udemy",
     year: "2026",
@@ -18,7 +11,7 @@ const certs = [
   {
     title: "Complete Generative AI Course With Langchain and Huggingface",
     issuer: "Udemy",
-    year: "2023",
+    year: "2026",
     link: "#",
     image: "/certs/k8s.png",
   },
