@@ -22,6 +22,15 @@ const projects = [
     image: "/projects/ai-blog-langraph.png",
   },
   {
+    title: "AutoGen-MCP Notion Workspace Agent",
+    description:
+      "Picture the frustration of managing your Notion workspace like manually creating pages for every research topic, struggling to find that important document buried somewhere, or spending precious time organizing scattered information. This project eliminates that hassle by building an AI agent that understands requests like 'find all my marketing research' or 'create a project page with these details' and handles everything instantly through natural conversation.",
+    tech: ["Python", "Flask", "AutoGen Framework", "Model Context Protocol","Ngrok"],
+    code: "https://github.com/namitjain123/autogen-mcp.git",
+    demo: "https://youtu.be/SDL67lZjtCA",
+    image: "/projects/autogen-mcp.jpg",
+  },
+  {
     title: "Adaptive RAG System with Self-Correcting Agent",
     description:
       "Built an AI-powered application where an agent dynamically routes queries between vector search and live web search before generating responses. Designed a stateful LangGraph workflow implementing self-correcting retrieval, retry logic, and validation instead of a single-pass LLM call. Implemented grounded response verification and transparent source logging to reduce hallucinations, improve reliability, and make the system debuggable and production-ready. Deployed the interactive interface using Streamlit for real-time query handling and response visualization.",
