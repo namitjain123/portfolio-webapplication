@@ -13,6 +13,15 @@ const projects = [
     image: "/projects/analyser-gpt.png",
   },
   {
+    title: "n8n Video Automation (Image→ AI Video)",
+    description:
+      "ou start with a photo and an idea, and instead of juggling tools to get a short video, you just chat: upload, review, refine, generate. The system edits the image, cleans the prompt, converts and hosts media, runs the video model, and delivers a ready 16:9 video. Ideal for reels, shorts, and quick product or personal concepts without breaking creative flow.",
+    tech: ["n8n ", "Gemini 2.5 Flash (image editing)", "OpenAI (intent parsing & prompt refinement)", "Veo3_fast via ","KIE.ai (video generation)"],
+    code: "https://github.com/namitjain123/video-generator.git",
+    demo: "https://youtu.be/12xjfHGmEH4",
+    image: "/projects/video-generation.jpg",
+  },
+  {
     title: "AI Blog Generation Platform with LangGraph and FastAPI",
     description:
       "Developed a production-ready AI blog generation system leveraging LangGraph-based state orchestration within a FastAPI backend. Engineered structured, multi-step AI pipelines for title generation, content drafting, and multilingual transformation with controlled execution logic. Built persistent storage using SQLite with full RESTful CRUD support and integrated a responsive React frontend for real-time content rendering and seamless user interaction.",
