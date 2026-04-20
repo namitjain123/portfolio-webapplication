@@ -22,7 +22,6 @@ const projects = [
     image: "/projects/video-generation.jpg",
   },
   
-
   {
     title: "AutoGen-MCP Notion Workspace Agent",
     description:
