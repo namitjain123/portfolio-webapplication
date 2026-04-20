@@ -21,7 +21,18 @@ const projects = [
     demo: "https://youtu.be/12xjfHGmEH4",
     image: "/projects/video-generation.jpg",
   },
+  
+
   {
+    title: "AutoGen-MCP Notion Workspace Agent",
+    description:
+      "Picture the frustration of managing your Notion workspace like manually creating pages for every research topic, struggling to find that important document buried somewhere, or spending precious time organizing scattered information. This project eliminates that hassle by building an AI agent that understands requests like 'find all my marketing research' or 'create a project page with these details' and handles everything instantly through natural conversation.",
+    tech: ["Python", "Flask", "AutoGen Framework", "Model Context Protocol","Ngrok"],
+    code: "https://github.com/namitjain123/autogen-mcp.git",
+    demo: "https://youtu.be/SDL67lZjtCA",
+    image: "/projects/autogen-mcp.jpg",
+  },
+   {
     title: "AI Blog Generation Platform with LangGraph and FastAPI",
     description:
       "Developed a production-ready AI blog generation system leveraging LangGraph-based state orchestration within a FastAPI backend. Engineered structured, multi-step AI pipelines for title generation, content drafting, and multilingual transformation with controlled execution logic. Built persistent storage using SQLite with full RESTful CRUD support and integrated a responsive React frontend for real-time content rendering and seamless user interaction.",
@@ -30,19 +41,10 @@ const projects = [
     demo: "https://youtu.be/9KoACMW-f30",
     image: "/projects/ai-blog-langraph.png",
   },
-  {
-    title: "AutoGen-MCP Notion Workspace Agent",
-    description:
-      "Imagine planning a trip where you have to juggle weather forecasts, find the best places to visit, convert currencies, and manage expenses and more all while ensuring everything fits your budget and schedule. This project solves that exact problem by creating an intelligent AI agent that orchestrates multiple tools seamlessly",
-    tech: ["Python", "Flask", "AutoGen Framework", "Model Context Protocol","Ngrok"],
-    code: "https://github.com/namitjain123/autogen-mcp.git",
-    demo: "https://youtu.be/SDL67lZjtCA",
-    image: "/projects/autogen-mcp.jpg",
-  },
-  {
+   {
     title: "AI Trip Planner",
     description:
-      "Built an AI-powered application where an agent dynamically routes queries between vector search and live web search before generating responses. Designed a stateful LangGraph workflow implementing self-correcting retrieval, retry logic, and validation instead of a single-pass LLM call. Implemented grounded response verification and transparent source logging to reduce hallucinations, improve reliability, and make the system debuggable and production-ready. Deployed the interactive interface using Streamlit for real-time query handling and response visualization.",
+      "Imagine planning a trip where you have to juggle weather forecasts, find the best places to visit, convert currencies, and manage expenses and more all while ensuring everything fits your budget and schedule. This project solves that exact problem by creating an intelligent AI agent that orchestrates multiple tools seamlessly",
     tech: ["Langchain", "Langsmith", "LangGraph", "Agentic AI","Streamlit","FastAPI","Python"],
     code: "https://github.com/namitjain123/ai-planner.git",
     demo: "https://youtu.be/OYwdOVNtgKs",
