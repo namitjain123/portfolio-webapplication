@@ -55,7 +55,7 @@ const About = () => {
           </h2>
 
           <p className="text-white/70 text-sm md:text-base tracking-wide">
-            Master of Data Science • Melbourne • AI + Full-Stack Builder
+            Master of Data Science • Melbourne • AI + Backend Builder
           </p>
         </div>
 
