@@ -6,20 +6,20 @@ const images = ["/about/image1.jpg", "/about/image2.jpg", "/about/image3.jpg"];
 const stack = [
   "Python",
   "FastAPI",
-  "React",
-  "TypeScript",
+  "Rag",
+  "Autogen",
   "LangGraph",
   "LangChain",
-  "Docker",
+  "Streamlit",
   "Azure",
-  "ChromaDB",
+  "n8n",
 ];
 
-const stats = [
-  { label: "Projects Built", value: "7+" },
-  { label: "Focus", value: "RAG + Agents" },
-  { label: "Deployment", value: "Docker + Azure" },
-];
+// const stats = [
+//   { label: "Projects Built", value: "7+" },
+//   { label: "Focus", value: "RAG + Agents" },
+//   { label: "Deployment", value: "Docker + Azure" },
+// ];
 
 const About = () => {
   const [index, setIndex] = useState(0);
