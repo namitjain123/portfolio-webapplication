@@ -111,7 +111,7 @@ const projects = [
   
 ];
 
-const INITIAL_SHOW = 4;
+const INITIAL_SHOW = 6;
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
