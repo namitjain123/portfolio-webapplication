@@ -32,16 +32,7 @@ const projects = [
     demo: "https://youtu.be/SDL67lZjtCA",
     image: "/projects/autogen-mcp.jpg",
   },
-   {
-    title: "AI Blog Generation Platform with LangGraph and FastAPI",
-    description:
-      "Developed a production-ready AI blog generation system leveraging LangGraph-based state orchestration within a FastAPI backend. Engineered structured, multi-step AI pipelines for title generation, content drafting, and multilingual transformation with controlled execution logic. Built persistent storage using SQLite with full RESTful CRUD support and integrated a responsive React frontend for real-time content rendering and seamless user interaction.",
-    tech: ["LangGraph", "FastAPI", "React", "Python", "SQLite", "Docker","Rag"],
-    code: "https://github.com/namitjain123/blog-generator-using-langgraph",
-    demo: "https://youtu.be/9KoACMW-f30",
-    image: "/projects/ai-blog-langraph.png",
-  },
-   {
+     {
     title: "AI Trip Planner",
     description:
       "Imagine planning a trip where you have to juggle weather forecasts, find the best places to visit, convert currencies, and manage expenses and more all while ensuring everything fits your budget and schedule. This project solves that exact problem by creating an intelligent AI agent that orchestrates multiple tools seamlessly",
@@ -50,6 +41,16 @@ const projects = [
     demo: "https://youtu.be/OYwdOVNtgKs",
     image: "/projects/adaptive-rag.jpg",
   },
+   {
+    title: "Enterprise RAG Chatbot",
+    description:
+      "Companies often struggle with employees spending hours searching through internal documents, policies, and procedures. This chatbot transforms that experience by providing instant, accurate answers from company knowledge bases, saving countless hours and improving productivity",
+    tech: ["Python", "Gradio", "PyMuPDF", "Sentence-Transformers", "ChromaDB", "Docker","Groq-api"],
+    code: "https://github.com/namitjain123/enterprise-rag-chatbot-internship.git",
+    demo: "https://youtu.be/uSzYjdd_CqE",
+    image: "/projects/rag-chatbot.jpg",
+  },
+
   {
     title: "Full-Stack Todo Management System",
     description:
